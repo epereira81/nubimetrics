@@ -34,7 +34,7 @@ export const Hero = () => {
     banners,
   } = data.home.hero;
   return (
-    <Stack direction={["column", "row"]} alignItems={("", "center")}>
+    <Stack direction={["column", "row"]} alignItems={"center"}>
       <Container
         maxW={"container.xl"}
         textAlign={["center", "left"]}
@@ -49,7 +49,12 @@ export const Hero = () => {
         </Link>
       </Container>
 
-      <Box overflowY={["scroll", "hidden"]} overflowX={["scroll", "hidden"]} w={"100%"} flex="1">
+      <Box
+        overflowY={["scroll", "hidden"]}
+        overflowX={["scroll", "hidden"]}
+        w={"100%"}
+        flex="1"
+      >
         <HeroCard banners={banners} />
       </Box>
     </Stack>

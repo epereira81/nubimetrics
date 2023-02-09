@@ -18,7 +18,6 @@ export const Footer = () => {
           py={5}
           justifyContent="space-between"
           px={16}
-          py={10}
         >
           <Stack spacing={5}>
             <Flex justify={["center", "flex-start"]}>

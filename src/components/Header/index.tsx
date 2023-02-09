@@ -1,76 +1,55 @@
 import React from "react";
-import {
-  Box,
-  Container,
-  Flex,
-  Img,
-  Link,
-  Icon,
-  useDisclosure,
-  Button,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  List,
-  ListItem,
-} from "@chakra-ui/react";
-import { FiMenu } from "react-icons/fi";
+import { Box, Button, Container, Flex, Img, Link } from "@chakra-ui/react";
+import { DrawerMenu } from "../DrawerMenu";
+import { data } from "@/utils/data";
+import { Logo } from "../Logo";
+import { useScroll } from "react-use";
 
 export const Header = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const scrollRef = React.useRef(null);
+  const { x, y } = useScroll(scrollRef);
 
   return (
-    <Box as="header">
-      <Container py="4">
+    <Box
+      as="header"
+      position="sticky"
+      top="0"
+      w="100%"
+      bg={y === 0 ? "" : "blackAlpha.100"}
+      backdropFilter="blur(10px)"
+    >
+      <Container py="4" maxW="container.xl">
         <Flex alignItems="center" justify="space-between">
-          <Img src="/images/icons/logo.png" w="150px" h="auto" />
+          <Logo />
 
-          <Link color="brand.900">Login</Link>
-
-          <Flex as="button" h="auto" onClick={onOpen}>
-            <Icon as={FiMenu} color="brand.800" w="26px" h="26px" />
+          <Flex alignItems="center" display={["none", "none", "flex"]}>
+            {data.menu.map((item) => (
+              <Link href={item.link} key={item.label} mx="3">
+                {item.label}
+              </Link>
+            ))}
           </Flex>
 
-          <Modal
-            isCentered
-            onClose={onClose}
-            isOpen={isOpen}
-            motionPreset="slideInBottom"
-            size="full"
-          >
-            <ModalContent>
-              <ModalCloseButton />
-              <Box p="7" mt="5">
-                <List spacing="3">
-                  <ListItem>
-                    <Link>Produto</Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link>Blog</Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link>Academia</Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link>Quem Somos</Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link>Eventos</Link>
-                  </ListItem>
-                  <ListItem>
-                    <Link>Suporte</Link>
-                  </ListItem>
-                  <ListItem>
-                    <Button bg="brand.900" color="#fff" fontWeight="600">Prueba Gratis</Button>
-                  </ListItem>
-                </List>
-              </Box>
-            </ModalContent>
-          </Modal>
+          <Flex alignItems="center" gap="7">
+            <Link color="brand.900" href="/login">
+              Login
+            </Link>
+
+            <Box display={["none", "none", "flex"]}>
+              <Button
+                bg="brand.900"
+                color="#fff"
+                fontWeight="600"
+                _hover={{ bg: "brand.900" }}
+              >
+                Prueba Gratis
+              </Button>
+            </Box>
+          </Flex>
+
+          <Box display={{ md: "none" }}>
+            <DrawerMenu />
+          </Box>
         </Flex>
       </Container>
     </Box>

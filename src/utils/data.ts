@@ -51,10 +51,55 @@ export const data = {
         link: "/#",
       },
       banners: [
-        { image: "/images/home/home-hero.png", title: "Quiero comenzar a vender", subtitle: "Encuentra el producto perfecto para vender online y aumentar tu rentabilidad." },
-        { image: "/images/home/home-hero.png", title: "Quiero comenzar a vender", subtitle: "Encuentra el producto perfecto para vender online y aumentar tu rentabilidad." },
-        { image: "/images/home/home-hero.png", title: "Quiero comenzar a vender", subtitle: "Encuentra el producto perfecto para vender online y aumentar tu rentabilidad." },
+        {
+          image: "/images/home/home-hero.png",
+          title: "Quiero comenzar a vender",
+          subtitle:
+            "Encuentra el producto perfecto para vender online y aumentar tu rentabilidad.",
+        },
+        {
+          image: "/images/home/home-hero.png",
+          title: "Quiero comenzar a vender",
+          subtitle:
+            "Encuentra el producto perfecto para vender online y aumentar tu rentabilidad.",
+        },
+        {
+          image: "/images/home/home-hero.png",
+          title: "Quiero comenzar a vender",
+          subtitle:
+            "Encuentra el producto perfecto para vender online y aumentar tu rentabilidad.",
+        },
       ],
     },
+    infoCardList: [
+      {
+        tag: "Elige el producto para vender",
+        title: "Vende productos con demanda _",
+        subtitle:
+          "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
+        image: "/images/home/home-hero.png",
+      },
+      {
+        tag: "Elige el producto para vender",
+        title: "Vende productos con demanda _",
+        subtitle:
+          "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
+        image: "/images/home/home-hero.png",
+      },
+      {
+        tag: "Elige el producto para vender",
+        title: "Vende productos con demanda _",
+        subtitle:
+          "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
+        image: "/images/home/home-hero.png",
+      },
+      {
+        tag: "Elige el producto para vender",
+        title: "Vende productos con demanda _",
+        subtitle:
+          "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
+        image: "/images/home/home-hero.png",
+      },
+    ],
   },
 };

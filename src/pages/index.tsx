@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { Layout } from "@/components/Layout";
 import { Hero } from "@/components/Hero";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 import { HomeBrands } from "@/components/HomeBrands";
+import { VideoModal } from "@/components/VideoModal";
+import { InfoCardList } from "@/components/InfocardList";
 
 export default function Home() {
   return (
@@ -21,6 +23,15 @@ export default function Home() {
 
         <Container maxW={"container.xl"}>
           <HomeBrands />
+        </Container>
+
+        <Container maxW={"container.xl"} my={16}>
+          <Flex justify={"center"}>
+            <VideoModal />
+          </Flex>
+        </Container>
+        <Container maxW={"container.xl"} my={16}>
+          <InfoCardList />
         </Container>
       </Layout>
     </Box>

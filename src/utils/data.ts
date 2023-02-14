@@ -74,31 +74,115 @@ export const data = {
     infoCardList: [
       {
         tag: "Elige el producto para vender",
-        title: "Vende productos con demanda _",
+        title: "1 Vende productos con demanda _",
         subtitle:
           "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
-        image: "/images/home/home-hero.png",
+        image: "/images/home/home-2.png",
       },
       {
         tag: "Elige el producto para vender",
-        title: "Vende productos con demanda _",
+        title: "2 Vende productos con demanda _",
         subtitle:
           "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
-        image: "/images/home/home-hero.png",
+        image: "/images/home/home-2.png",
       },
       {
         tag: "Elige el producto para vender",
-        title: "Vende productos con demanda _",
+        title: "3 Vende productos con demanda _",
         subtitle:
           "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
-        image: "/images/home/home-hero.png",
+        image: "/images/home/home-2.png",
       },
       {
         tag: "Elige el producto para vender",
-        title: "Vende productos con demanda _",
+        title: "4 Vende productos con demanda _",
         subtitle:
           "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
-        image: "/images/home/home-hero.png",
+        image: "/images/home/home-2.png",
+      },
+      {
+        tag: "Elige el producto para vender",
+        title: "5 Vende productos con demanda _",
+        subtitle:
+          "Descubre nuevos mercados con mucha demanda, arma un stock eficiente y potencia tus ventas.",
+        image: "/images/home/home-2.png",
+      },
+    ],
+    infoCardTab: [
+      {
+        tabtitle: "Vendedor principiante",
+        title:
+          "Todo lo que necesitas para comenzar a vender y crecer en marketplaces.",
+        list: [
+          {
+            title: "Mercado",
+            subtitle:
+              "Obtén información para conocer la demanda en marketplaces y aumentar tus ventas",
+            image: "/images/home/hometab-1.png",
+          },
+          {
+            title: "Competencia",
+            subtitle:
+              "Conoce las estrategias de tus competidores y aprende cómo superarlos.",
+            image: "/images/home/hometab-1.png",
+          },
+          {
+            title: "Mi Negocio",
+            subtitle:
+              "Descubre el potencial de tu negocio y mejora tu rentabilidad.",
+            image: "/images/home/hometab-1.png",
+          },
+        ],
+      },
+      {
+        tabtitle: "Vendedor con experiencia",
+        title:
+          "Todo lo que necesitas para comenzar a vender y crecer en marketplaces.",
+        list: [
+          {
+            title: "Mercado",
+            subtitle:
+              "Obtén información para conocer la demanda en marketplaces y aumentar tus ventas",
+            image: "/images/home/hometab-1.png",
+          },
+          {
+            title: "Competencia",
+            subtitle:
+              "Conoce las estrategias de tus competidores y aprende cómo superarlos.",
+            image: "/images/home/hometab-1.png",
+          },
+          {
+            title: "Mi Negocio",
+            subtitle:
+              "Descubre el potencial de tu negocio y mejora tu rentabilidad.",
+            image: "/images/home/hometab-1.png",
+          },
+        ],
+      },
+      {
+        tabtitle: "Marcas",
+        title:
+          "Todo lo que necesitas para comenzar a vender y crecer en marketplaces.",
+        list: [
+          {
+            title: "Mercado",
+            subtitle:
+              "Obtén información para conocer la demanda en marketplaces y aumentar tus ventas",
+            image: "/images/home/hometab-1.png",
+          },
+          {
+            title: "Competencia",
+            subtitle:
+              "Conoce las estrategias de tus competidores y aprende cómo superarlos.",
+            image: "/images/home/hometab-1.png",
+          },
+          {
+            title: "Mi Negocio",
+            subtitle:
+              "Descubre el potencial de tu negocio y mejora tu rentabilidad.",
+            image: "/images/home/hometab-1.png",
+          },
+        ],
       },
     ],
   },

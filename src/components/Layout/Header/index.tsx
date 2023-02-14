@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Button, Container, Flex, Img, Link } from "@chakra-ui/react";
-import { DrawerMenu } from "../DrawerMenu";
 import { data } from "@/utils/data";
-import { Logo } from "../Logo";
 import { useScroll } from "react-use";
+import { DrawerMenu } from "@/components/DrawerMenu";
+import { Logo } from "@/components/Logo";
 
 export const Header = () => {
   const scrollRef = React.useRef(null);

@@ -1,10 +1,10 @@
 import React from "react";
 import { Box, Container, Divider, Flex, Stack } from "@chakra-ui/react";
-import { Newsletter } from "../Newsletter";
-import { Copy } from "../Copy";
-import { Logo } from "../Logo";
-import { Social } from "../Social";
-import { MenuFooter } from "../MenuFooter";
+import { Newsletter } from "@/components/Newsletter";
+import { Copy } from "@/components/Copy";
+import { Logo } from "@/components/Logo";
+import { MenuFooter } from "@/components/MenuFooter";
+import { Social } from "@/components/Social";
 
 export const Footer = () => {
   return (

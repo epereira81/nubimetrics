@@ -5,6 +5,8 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 import { HomeBrands } from "@/components/HomeBrands";
 import { VideoModal } from "@/components/VideoModal";
 import { InfoCardList } from "@/components/InfocardList";
+import { InfocardTab } from "@/components/InfocardTab";
+import { data } from "@/utils/data";
 
 export default function Home() {
   return (
@@ -30,8 +32,13 @@ export default function Home() {
             <VideoModal />
           </Flex>
         </Container>
+
         <Container maxW={"container.xl"} my={16}>
           <InfoCardList />
+        </Container>
+
+        <Container maxW={"container.xl"} my={16}>
+          <InfocardTab data={data.home.infoCardTab} />
         </Container>
       </Layout>
     </Box>

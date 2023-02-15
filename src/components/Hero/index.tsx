@@ -40,7 +40,7 @@ export const Hero = () => {
         textAlign={["center", "left"]}
         maxWidth={["", "400px"]}
       >
-        <Text fontSize={["3xl", "4xl"]} color="brand.900" fontWeight={"800"}>
+        <Text fontSize={["3xl", "40px"]} color="brand.800" fontWeight={"600"} lineHeight={"1"}>
           {title}
         </Text>
         <Text my={5}>{subtitle}</Text>

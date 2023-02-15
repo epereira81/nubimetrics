@@ -1,7 +1,9 @@
+import { Box, Text } from "@chakra-ui/react";
 import React from "react";
-import { Tabs, TabList, Tab, TabPanels, TabPanel, Text } from "@chakra-ui/react";
+import { Desktop } from "./Desktop";
+import { Mobile } from "./Mobile";
 
-interface InfocardTabProps {
+export interface InfocardTabProps {
   data: {
     tabtitle: string;
     title: string;
@@ -15,20 +17,25 @@ interface InfocardTabProps {
 
 export const InfocardTab = ({ data }: InfocardTabProps) => {
   return (
-    <Tabs>
-      <TabList>
-        {data.map((item) => (
-          <Tab key={item.tabtitle}>{item.tabtitle}</Tab>
-        ))}
-      </TabList>
+    <Box>
+      <Text
+        fontSize={["30px", "40px"]}
+        color={"#000"}
+        textAlign={"center"}
+        my={16}
+        fontWeight={"600"}
+        maxW="700px"
+        mx="auto"
+      >
+        Incorpora información para potenciar tu negocio online_
+      </Text>
 
-      <TabPanels>
-        {data.map((item) => (
-          <TabPanel key={item.tabtitle}>
-            <Text>{item.title}</Text>
-          </TabPanel>
-        ))}
-      </TabPanels>
-    </Tabs>
+      <Box display={["none", "block"]}>
+        <Desktop data={data} />
+      </Box>
+      <Box display={["block", "none"]}>
+        <Mobile data={data} />
+      </Box>
+    </Box>
   );
 };

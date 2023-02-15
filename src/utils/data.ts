@@ -124,20 +124,20 @@ export const data = {
             title: "Competencia",
             subtitle:
               "Conoce las estrategias de tus competidores y aprende cómo superarlos.",
-            image: "/images/home/hometab-1.png",
+            image: "/images/home/hometab-2.png",
           },
           {
             title: "Mi Negocio",
             subtitle:
               "Descubre el potencial de tu negocio y mejora tu rentabilidad.",
-            image: "/images/home/hometab-1.png",
+            image: "/images/home/hometab-3.png",
           },
         ],
       },
       {
         tabtitle: "Vendedor con experiencia",
         title:
-          "Todo lo que necesitas para comenzar a vender y crecer en marketplaces.",
+          "Conviértete en el líder de tu rubro y explora en nuevos mercados.",
         list: [
           {
             title: "Mercado",
@@ -149,13 +149,13 @@ export const data = {
             title: "Competencia",
             subtitle:
               "Conoce las estrategias de tus competidores y aprende cómo superarlos.",
-            image: "/images/home/hometab-1.png",
+            image: "/images/home/hometab-2.png",
           },
           {
             title: "Mi Negocio",
             subtitle:
               "Descubre el potencial de tu negocio y mejora tu rentabilidad.",
-            image: "/images/home/hometab-1.png",
+            image: "/images/home/hometab-3.png",
           },
         ],
       },
@@ -174,13 +174,13 @@ export const data = {
             title: "Competencia",
             subtitle:
               "Conoce las estrategias de tus competidores y aprende cómo superarlos.",
-            image: "/images/home/hometab-1.png",
+            image: "/images/home/hometab-2.png",
           },
           {
             title: "Mi Negocio",
             subtitle:
               "Descubre el potencial de tu negocio y mejora tu rentabilidad.",
-            image: "/images/home/hometab-1.png",
+            image: "/images/home/hometab-3.png",
           },
         ],
       },

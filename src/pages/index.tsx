@@ -7,8 +7,10 @@ import { VideoModal } from "@/components/VideoModal";
 import { InfoCardList } from "@/components/InfocardList";
 import { InfocardTab } from "@/components/InfocardTab";
 import { data } from "@/utils/data";
+import { InfocardSlider } from "@/components/InfocardSlider";
 
 export default function Home() {
+  const { home } = data;
   return (
     <Box bgGradient={"linear(to-r, white, #6a5fe53b)"}>
       <Head>
@@ -38,8 +40,10 @@ export default function Home() {
         </Container>
 
         <Container maxW={"container.xl"} my={16}>
-          <InfocardTab data={data.home.infoCardTab} />
+          <InfocardTab data={home.infoCardTab} />
         </Container>
+
+        <InfocardSlider data={home.infoCardSlider} />
       </Layout>
     </Box>
   );

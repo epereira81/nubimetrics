@@ -185,5 +185,39 @@ export const data = {
         ],
       },
     ],
+    infoCardSlider: {
+      title: "Comienza a potenciar tu negocio_",
+      subtitle: "Prueba Nubimetrics por 14 días de manera gratuita y potencia tu negocio.",
+      cta: {
+        label: "Comenzar ahora",
+        link: ""
+      },
+      items: [
+        {
+          image: "data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23FFFFFF' /%3E%3C/svg%3E",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula. Sed ac purus sit amet odio tempus feugiat id eget sem.Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula.",
+          title: "Nombre y Apelido",
+          subtitle: "Cargo, Empresa"
+        },
+        {
+          image: "data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23FFFFFF' /%3E%3C/svg%3E",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula. Sed ac purus sit amet odio tempus feugiat id eget sem.Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula.",
+          title: "Nombre y Apelido",
+          subtitle: "Cargo, Empresa"
+        },
+        {
+          image: "data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23FFFFFF' /%3E%3C/svg%3E",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula. Sed ac purus sit amet odio tempus feugiat id eget sem.Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula.",
+          title: "Nombre y Apelido",
+          subtitle: "Cargo, Empresa"
+        },
+        {
+          image: "data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23FFFFFF' /%3E%3C/svg%3E",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula. Sed ac purus sit amet odio tempus feugiat id eget sem.Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula.",
+          title: "Nombre y Apelido",
+          subtitle: "Cargo, Empresa"
+        }
+      ]
+    }
   },
 };

@@ -1,34 +1,15 @@
 import React from "react";
 import {
   Box,
-  Button,
   Card,
   Image,
   Link,
-  List,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Slider, { Settings } from "react-slick";
+import Slider from "react-slick";
 
-interface InfocardSliderProps {
-  data: {
-    title: string;
-    subtitle: string;
-    cta: {
-      label: string;
-      link: string;
-    };
-    items: {
-      image: string;
-      description: string;
-      title: string;
-      subtitle: string;
-    }[];
-  };
-}
-
-export const InfocardSlider: React.FC<InfocardSliderProps> = ({ data }) => {
+export const Type1 = ({ data }) => {
   const {
     title,
     subtitle,
@@ -36,7 +17,7 @@ export const InfocardSlider: React.FC<InfocardSliderProps> = ({ data }) => {
     items,
   } = data;
 
-  const settings: Settings = {
+  const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -85,7 +66,13 @@ export const InfocardSlider: React.FC<InfocardSliderProps> = ({ data }) => {
         </Link>
       </Stack>
 
-      <Box pb={10} maxW={["", "container.xl"]} mx={["", "auto"]} w={"100%"}>
+      <Box
+        pb={10}
+        maxW={["", "container.xl"]}
+        mx={["", "auto"]}
+        w={"100%"}
+        overflow={"hidden"}
+      >
         <Slider {...settings} className="infocardSlider">
           {items.map((item) => (
             <Card
@@ -106,10 +93,19 @@ export const InfocardSlider: React.FC<InfocardSliderProps> = ({ data }) => {
                   width={["113px", "197px"]}
                 />
                 <Box>
-                  <Text color={"#fff"} py={4} maxW="800px" fontSize={["16px", "18px"]}>
+                  <Text
+                    color={"#fff"}
+                    py={4}
+                    maxW="800px"
+                    fontSize={["16px", "18px"]}
+                  >
                     {item.description}
                   </Text>
-                  <Text color={"#fff"} fontSize={["22px", "25px"]} fontWeight={"600"}>
+                  <Text
+                    color={"#fff"}
+                    fontSize={["22px", "25px"]}
+                    fontWeight={"600"}
+                  >
                     {item.title}
                   </Text>
                   <Text

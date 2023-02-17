@@ -13,6 +13,7 @@ export const Header = () => {
     <Box
       as="header"
       position="sticky"
+      zIndex={99}
       top="0"
       w="100%"
       bg={y === 0 ? "" : "blackAlpha.100"}

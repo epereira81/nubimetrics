@@ -43,7 +43,9 @@ export default function Home() {
           <InfocardTab data={home.infoCardTab} />
         </Container>
 
-        <InfocardSlider data={home.infoCardSlider} />
+        <InfocardSlider data={home.infoCardSlider1} type={"1"} />
+
+        <InfocardSlider data={home.infoCardSlider2} type={"2"} />
       </Layout>
     </Box>
   );

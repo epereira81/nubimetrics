@@ -30,11 +30,22 @@ const SlickSliderCSS = () => (
         @media(min-width: 768px) {
           .infocardSlider .slick-list {
             width: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
           }
           .infocardSlider .slick-slide {
             padding-left: 0;
             padding: 0 1rem;          
+          }
+          .infocardSlider .slick-arrow.slick-next {
+            right: 70px;          
+            top: unset;
+            bottom: -70px;
+          }
+          .infocardSlider .slick-arrow.slick-prev {
+            right: 100px;      
+            left: unset;    
+            top: unset;
+            bottom: -70px;
           }
         }
       `}

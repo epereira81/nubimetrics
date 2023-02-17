@@ -185,7 +185,7 @@ export const data = {
         ],
       },
     ],
-    infoCardSlider: {
+    infoCardSlider1: {
       title: "Comienza a potenciar tu negocio_",
       subtitle: "Prueba Nubimetrics por 14 días de manera gratuita y potencia tu negocio.",
       cta: {
@@ -216,6 +216,36 @@ export const data = {
           description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula. Sed ac purus sit amet odio tempus feugiat id eget sem.Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis a, rhoncus porta ligula.",
           title: "Nombre y Apelido",
           subtitle: "Cargo, Empresa"
+        }
+      ]
+    },
+    infoCardSlider2: {
+      title: "Blog Nubimetrics_",
+      subtitle: "Encuentra todos los consejos y novedades sobre tendencias y oportunidades en e-commerce para potenciar tu negocio online.",
+      items: [
+        {
+          image: "/images/home/homeBannerSliderType2.png",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis.",
+          title: "Aliquam mollis",
+          cta: {link:"#", label: "> link"}
+        },
+        {
+          image: "/images/home/homeBannerSliderType2.png",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis.",
+          title: "Aliquam mollis",
+          cta: {link:"#", label: "> link"}
+        },
+        {
+          image: "/images/home/homeBannerSliderType2.png",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis.",
+          title: "Aliquam mollis",
+          cta: {link:"#", label: "> link"}
+        },
+        {
+          image: "/images/home/homeBannerSliderType2.png",
+          description: "Aliquam mollis mattis augue sit amet blandit. Fusce felis risus, hendrerit at lobortis.",
+          title: "Aliquam mollis",
+          cta: {link:"#", label: "> link"}
         }
       ]
     }

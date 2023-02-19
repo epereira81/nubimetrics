@@ -1,6 +1,49 @@
 import React from "react";
-import { Box, Card, Image, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Card, Icon, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import Slider from "react-slick";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
+function SampleNextArrow(props) {
+  const { onClick, className } = props;
+  return (
+    <Icon
+      className={className}
+      fontSize={"30px"}
+      color={"#6FA4F0"}
+      sx={{
+        "&.slick-disabled": {
+          color: "#8FC7EF",
+        },
+      }}
+      as={IoIosArrowForward}
+      onClick={onClick}
+      position="absolute"
+      bottom={"-50px"}
+      right={"30px"}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick, className } = props;
+  return (
+    <Icon
+      className={className}
+      fontSize={"30px"}
+      color={"#6FA4F0"}
+      sx={{
+        "&.slick-disabled": {
+          color: "#8FC7EF",
+        },
+      }}
+      as={IoIosArrowBack}
+      onClick={onClick}
+      position="absolute"
+      bottom={"-50px"}
+      right={"50px"}
+    />
+  );
+}
 
 export const Type2 = ({ data }) => {
   const { title, subtitle, items } = data;
@@ -12,6 +55,8 @@ export const Type2 = ({ data }) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 768,
@@ -59,6 +104,7 @@ export const Type2 = ({ data }) => {
         w={"100%"}
         h={"max-content"}
         overflowX={["hidden", "unset"]}
+        position={"relative"}
       >
         <Slider {...settings} className="infocardSlider">
           {items.map((item) => (
@@ -91,6 +137,15 @@ export const Type2 = ({ data }) => {
             </Box>
           ))}
         </Slider>
+        <Link
+          position={"absolute"}
+          bottom={"-15px"}
+          left={"60px"}
+          color={"#5DA6F6"}
+          fontSize={["0", "20px"]}
+        >
+          Visitar Blog {">"}
+        </Link>
       </Box>
     </Stack>
   );

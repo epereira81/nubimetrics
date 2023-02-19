@@ -10,7 +10,7 @@ import {
 
 const SocialIcon = () => {
   return (
-    <HStack spacing={5}>
+    <HStack spacing={7}>
       <Link
         href="/#"
         display="flex"
@@ -78,7 +78,7 @@ const SocialIcon = () => {
 export const Social = () => {
   return (
     <>
-      <Text textAlign={["center", "left"]}>
+      <Text textAlign={["center", "left"]} fontSize={"20px"} color={"#000000"}>
         Siga-nos nas nossas redes sociais:
       </Text>
       <Flex justify={["center", "flex-start"]}>

@@ -248,6 +248,18 @@ export const data = {
           cta: {link:"#", label: "> link"}
         }
       ]
+    },
+    infoCardOptions: {
+      title: "¡Comienza a usar Nubimetrics!_",
+      subtitle: "Prueba gratis la plataforma que te ayudará a tomar mejores decisiones para potenciar tu rentabilidad y construir un negocio sustentable en e-commerce.",
+      cta1: {
+        label: "Vendedor",
+        link: "",
+      },
+      cta2: {
+        label: "Marca",
+        link: "",
+      }
     }
   },
 };

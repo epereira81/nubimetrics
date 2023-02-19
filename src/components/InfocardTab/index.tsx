@@ -24,6 +24,7 @@ export const InfocardTab = ({ data }: InfocardTabProps) => {
         textAlign={"center"}
         my={16}
         fontWeight={"600"}
+        lineHeight={1}
         maxW="700px"
         mx="auto"
       >

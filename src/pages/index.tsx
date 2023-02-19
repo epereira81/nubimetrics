@@ -8,6 +8,7 @@ import { InfoCardList } from "@/components/InfocardList";
 import { InfocardTab } from "@/components/InfocardTab";
 import { data } from "@/utils/data";
 import { InfocardSlider } from "@/components/InfocardSlider";
+import { InfoCardNoImage } from "@/components/InfoCardNoImage";
 
 export default function Home() {
   const { home } = data;
@@ -46,6 +47,8 @@ export default function Home() {
         <InfocardSlider data={home.infoCardSlider1} type={"1"} />
 
         <InfocardSlider data={home.infoCardSlider2} type={"2"} />
+
+        <InfoCardNoImage data={home.infoCardOptions} />
       </Layout>
     </Box>
   );

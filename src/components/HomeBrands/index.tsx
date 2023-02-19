@@ -4,7 +4,14 @@ import React from "react";
 export const HomeBrands = () => {
   return (
     <Stack spacing={10}>
-      <Text textAlign={"center"} fontSize="3xl" fontWeight={"800"} color="brand.900">Confían en nosotros</Text>
+      <Text
+        textAlign={"center"}
+        fontSize="30px"
+        fontWeight={"600"}
+        color="brand.800"
+      >
+        Confían en nosotros
+      </Text>
       <Wrap justify="center">
         <WrapItem>
           <Img src="/images/icons/intel.png" />

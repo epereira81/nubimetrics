@@ -26,7 +26,7 @@ export const InfoCardList = () => {
         <Text fontSize={["30px", "40px"]} as={"h2"} fontWeight={"900"}>
           Toma decisiones inteligentes_
         </Text>
-        <Text fontSize={["16px", "18px"]} color="#707070">
+        <Text fontSize={["18px"]} color="#707070">
           Incorpora información en cada una de tus decisiones para optimizar el
           proceso de ventas en e-commerce.
         </Text>
@@ -145,7 +145,7 @@ export const InfoCardList = () => {
                   <Text color={"#707070"} fontSize="18px" fontWeight={"600"}>
                     {item.tag}
                   </Text>
-                  <Text color={"brand.900"} fontSize="30px" fontWeight={"800"}>
+                  <Text color={"#6C5FED"} fontSize="30px" fontWeight={"800"}>
                     {item.title}
                   </Text>
                   <Text color={"#8089A2"} fontSize="18px" fontWeight={"600"}>

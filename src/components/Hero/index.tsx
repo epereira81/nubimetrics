@@ -1,6 +1,6 @@
 import { data } from "@/utils/data";
 import { Box, Text, Stack, Link, Container, Flex, Img } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
 type Banners = {
   image: string;
@@ -9,17 +9,22 @@ type Banners = {
 }[];
 
 const HeroCard = ({ banners }: { banners: Banners }) => {
+  const [active, setActive] = useState(0);
+
   return (
     <Flex gap={5} pl={[5, 0]} w="max-content" py={[10, 0]}>
       {banners.map((item, index) => (
         <Img
           src={item.image}
           key={item.title}
-          w={["332px", `${index === 0 ? "400px" : "200px"}`]}
+          w={["332px", `${active === index ? "400px" : "200px"}`]}
           h={["", "540px"]}
           objectFit="cover"
           objectPosition={"left"}
           borderRadius="30px"
+          onMouseEnter={() => setActive(index)}
+          onMouseLeave={() => setActive(0)}
+          transition={"width .3s ease"}
         />
       ))}
     </Flex>
@@ -40,11 +45,16 @@ export const Hero = () => {
         textAlign={["center", "left"]}
         maxWidth={["", "400px"]}
       >
-        <Text fontSize={["3xl", "40px"]} color="brand.800" fontWeight={"600"} lineHeight={"1"}>
+        <Text
+          fontSize={["35px", "40px"]}
+          color="#6C5FED"
+          fontWeight={"600"}
+          lineHeight={"1"}
+        >
           {title}
         </Text>
         <Text my={5}>{subtitle}</Text>
-        <Link href={ctaLink} color="brand.900" fontWeight={"800"}>
+        <Link href={ctaLink} color="brand.800" fontWeight={"800"}>
           {ctaText}
         </Link>
       </Container>

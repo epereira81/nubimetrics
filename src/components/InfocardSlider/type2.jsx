@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, Icon, Link, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Icon, Link, Stack, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
@@ -82,7 +82,7 @@ export const Type2 = ({ data }) => {
         <Text
           fontSize={["30px", "35px"]}
           fontWeight={"600"}
-          lineHeight={"1.3"}
+          lineHeight={1.3}
           color={"#151923"}
         >
           {title}

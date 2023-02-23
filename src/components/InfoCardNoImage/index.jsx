@@ -5,7 +5,7 @@ export const InfoCardNoImage = ({ data }) => {
   return (
     <Box bg={"linear-gradient(#6A5FE5, #945DFD)"} py={10} my={16}>
       <Container maxW={"container.xl"} textAlign={"center"}>
-        <Text fontSize={"30px"} color={"#fff"} fontWeight={"600"} lineHeigh={1}>
+        <Text fontSize={"30px"} color={"#fff"} fontWeight={"600"} lineHeight={1}>
           {data.title}
         </Text>
 
@@ -14,7 +14,7 @@ export const InfoCardNoImage = ({ data }) => {
           color={"#fff"}
           mt={5}
           mb={16}
-          lineHeigh={1}
+          lineHeight={1}
           maxW={"700px"}
           alignSelf={"center"}
           mx={"auto"}

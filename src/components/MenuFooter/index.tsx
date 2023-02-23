@@ -2,10 +2,20 @@ import { data } from "@/utils/data";
 import { Link, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 
-export const MenuFooter = () => {
+interface MenuFooterProps {
+  data: {
+    title: string;
+    items: {
+      label: string;
+      link: string;
+    }[];
+  }[];
+}
+
+export const MenuFooter = ({ data }: MenuFooterProps) => {
   return (
     <Stack spacing={[10, 20]} direction={["column", "row"]}>
-      {data.menuFooter.map((item) => (
+      {data.map((item) => (
         <Stack key={item.title} as="h3">
           <Text
             fontSize="2xl"
@@ -18,7 +28,12 @@ export const MenuFooter = () => {
 
           <Stack justify={"center"} alignItems={["center", "flex-start"]}>
             {item.items.map((item) => (
-              <Link href={item.link} key={item.label} color="brand.700" fontWeight={"600"}>
+              <Link
+                href={item.link}
+                key={item.label}
+                color="brand.700"
+                fontWeight={"600"}
+              >
                 {item.label}
               </Link>
             ))}

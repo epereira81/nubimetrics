@@ -1,4 +1,3 @@
-import { data } from "@/utils/data";
 import { Box, Text, Stack, Link, Container, Flex, Img } from "@chakra-ui/react";
 import React, { useState } from "react";
 
@@ -6,6 +5,7 @@ type Banners = {
   image: string;
   title: string;
   subtitle: string;
+  link: string;
 }[];
 
 const HeroCard = ({ banners }: { banners: Banners }) => {
@@ -14,30 +14,48 @@ const HeroCard = ({ banners }: { banners: Banners }) => {
   return (
     <Flex gap={5} pl={[5, 0]} w="max-content" py={[10, 0]}>
       {banners.map((item, index) => (
-        <Img
-          src={item.image}
-          key={item.title}
-          w={["332px", `${active === index ? "400px" : "200px"}`]}
-          h={["", "540px"]}
-          objectFit="cover"
-          objectPosition={"left"}
-          borderRadius="30px"
-          onMouseEnter={() => setActive(index)}
-          onMouseLeave={() => setActive(0)}
-          transition={"width .3s ease"}
-        />
+        <Link key={item.title} href={item.link}>
+          <Img
+            src={item.image}
+            w={["332px", `${active === index ? "400px" : "200px"}`]}
+            h={["", "540px"]}
+            objectFit="cover"
+            objectPosition={"left"}
+            borderRadius="30px"
+            onMouseEnter={() => setActive(index)}
+            onMouseLeave={() => setActive(0)}
+            transition={"width .3s ease"}
+          />
+        </Link>
       ))}
     </Flex>
   );
 };
 
-export const Hero = () => {
+interface Hero {
+  data: {
+    title: string;
+    subtitle: string;
+    cta: {
+      text: string;
+      link: string;
+    };
+    banners: {
+      image: string;
+      title: string;
+      subtitle: string;
+      link: string;
+    }[];
+  };
+}
+
+export const Hero = ({ data }: Hero) => {
   const {
     title,
     subtitle,
     cta: { link: ctaLink, text: ctaText },
     banners,
-  } = data.home.hero;
+  } = data;
   return (
     <Stack direction={["column", "row"]} alignItems={"center"}>
       <Container
@@ -49,7 +67,7 @@ export const Hero = () => {
           fontSize={["35px", "40px"]}
           color="#6C5FED"
           fontWeight={"600"}
-          lineHeight={"1"}
+          lineHeight={1}
         >
           {title}
         </Text>

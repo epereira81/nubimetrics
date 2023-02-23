@@ -1,7 +1,16 @@
 import { Flex, Img, Stack, Text, Wrap, WrapItem } from "@chakra-ui/react";
 import React from "react";
 
-export const HomeBrands = () => {
+interface HomeBrandsProps {
+  data: {
+    title: string;
+    brands: {
+      img: string;
+    }[];
+  };
+}
+
+export const HomeBrands = ({ data }: HomeBrandsProps) => {
   return (
     <Stack spacing={10}>
       <Text
@@ -10,56 +19,14 @@ export const HomeBrands = () => {
         fontWeight={"600"}
         color="brand.800"
       >
-        Confían en nosotros
+        {data.title}
       </Text>
       <Wrap justify="center">
-        <WrapItem>
-          <Img src="/images/icons/intel.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/quilmes.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/goodyear.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/samsung.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/disney.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/puma.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/hp.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/pernoid-ricard.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/dexter.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/fravega.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/nanoshop.png" />
-        </WrapItem>
-
-        <WrapItem>
-          <Img src="/images/icons/farmacity.png" />
-        </WrapItem>
+        {data.brands.map((item) => (
+          <WrapItem key={item.img}>
+            <Img src={item.img} />
+          </WrapItem>
+        ))}
       </Wrap>
     </Stack>
   );

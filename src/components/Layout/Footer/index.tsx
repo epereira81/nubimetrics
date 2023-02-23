@@ -6,7 +6,17 @@ import { Logo } from "@/components/Logo";
 import { MenuFooter } from "@/components/MenuFooter";
 import { Social } from "@/components/Social";
 
-export const Footer = () => {
+interface FooterProps {
+  data: {
+    title: string;
+    items: {
+      label: string;
+      link: string;
+    }[];
+  }[];
+}
+
+export const Footer = ({ data }: FooterProps) => {
   return (
     <Box as="footer">
       <Container maxW="container.xl">
@@ -26,7 +36,7 @@ export const Footer = () => {
             <Social />
           </Stack>
           <Box>
-            <MenuFooter />
+            <MenuFooter data={data} />
           </Box>
         </Stack>
         <Divider />

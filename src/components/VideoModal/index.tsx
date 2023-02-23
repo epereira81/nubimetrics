@@ -13,7 +13,14 @@ import {
 } from "@chakra-ui/react";
 import { VscPlayCircle } from "react-icons/vsc";
 
-export const VideoModal = () => {
+interface VideoModalProps {
+  data: {
+    title: string;
+    iframeSrc: string;
+  };
+}
+
+export const VideoModal = ({ data }: VideoModalProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -28,7 +35,7 @@ export const VideoModal = () => {
             color={"brand.900"}
           />
           <Text color={"brand.700"} fontWeight={"500"} fontSize={"20px"}>
-            Mira cómo podemos ayudarte
+            {data.title}
           </Text>
         </Flex>
       </Button>
@@ -42,7 +49,7 @@ export const VideoModal = () => {
             <iframe
               width="950px"
               height="550px"
-              src="https://www.youtube.com/embed/j2WOADJNtxU?controls=0"
+              src={data.iframeSrc}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

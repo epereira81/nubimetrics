@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  Image,
-  Link,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Card, Image, Link, Stack, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 
 export const Type1 = ({ data }) => {
@@ -39,7 +32,7 @@ export const Type1 = ({ data }) => {
         <Text
           fontSize={["30px", "35px"]}
           fontWeight={"600"}
-          lineHeight={"1.3"}
+          lineHeight={1.3}
           color={"#151923"}
         >
           {title}

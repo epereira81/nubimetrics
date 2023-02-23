@@ -4,12 +4,32 @@ import { Box } from "@chakra-ui/react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+  data: {
+    menu: {
+      label: string;
+      link: string;
+    }[];
+    menuFooter: {
+      title: string;
+      items: {
+        label: string;
+        link: string;
+      }[];
+    }[];
+  };
+}
+
+export const Layout = ({
+  children,
+  data: { menu, menuFooter },
+}: LayoutProps) => {
   return (
     <>
-      <Header />
+      <Header data={menu} />
       <Box as="main">{children}</Box>
-      <Footer />
+      <Footer data={menuFooter} />
     </>
   );
 };

@@ -13,7 +13,7 @@ import { InfoCardNoImage } from "@/components/InfoCardNoImage";
 export default function Home() {
   const {
     languages: {
-      es: { siteSettings, home, menu, menuFooter },
+      br: { siteSettings, home, menu, menuFooter },
     },
   } = data;
 

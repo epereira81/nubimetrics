@@ -13,14 +13,25 @@ import {
   Divider,
   Container,
   Link as CharkaLink,
+  MenuList,
+  Menu,
+  MenuButton,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import { FaAngleDown } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { Logo } from "../Logo";
 import { Social } from "../Social";
 
-export const DrawerMenu = () => {
+interface DrawerMenuProps {
+  data: {
+    label: string;
+    link: string;
+  }[];
+}
+
+export const DrawerMenu = ({ data }: DrawerMenuProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -42,7 +53,7 @@ export const DrawerMenu = () => {
               <Logo />
 
               <Flex alignItems="center" display={["none", "none", "flex"]}>
-                {data.menu.map((item) => (
+                {data.map((item) => (
                   <Link href={item.link} key={item.label}>
                     <CharkaLink mx={3}>{item.label}</CharkaLink>
                   </Link>
@@ -78,7 +89,7 @@ export const DrawerMenu = () => {
             </Flex>
 
             <List spacing="3">
-              {data.menu.map((item) => (
+              {data.map((item) => (
                 <ListItem key={item.label}>
                   <Link href={item.link}>
                     <CharkaLink fontSize={"21px"} color={"#232834"}>
@@ -104,6 +115,40 @@ export const DrawerMenu = () => {
               <Divider py={5} my={5} />
 
               <Social />
+
+              <Box>
+                <Menu>
+                  <MenuButton as={Button} rightIcon={<FaAngleDown />}>
+                    Language
+                  </MenuButton>
+                  <MenuList>
+                    <CharkaLink
+                      display={"block"}
+                      padding={2}
+                      _hover={{ bg: "#fafafa" }}
+                      href="/en"
+                    >
+                      EN
+                    </CharkaLink>
+                    <CharkaLink
+                      display={"block"}
+                      padding={2}
+                      _hover={{ bg: "#fafafa" }}
+                      href="/"
+                    >
+                      ES
+                    </CharkaLink>
+                    <CharkaLink
+                      display={"block"}
+                      padding={2}
+                      _hover={{ bg: "#fafafa" }}
+                      href="/br"
+                    >
+                      PT-BR
+                    </CharkaLink>
+                  </MenuList>
+                </Menu>
+              </Box>
             </List>
           </Box>
         </ModalContent>

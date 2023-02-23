@@ -3,20 +3,30 @@ import {
   Box,
   Button,
   Card,
-  Divider,
   Flex,
   HStack,
   Image,
-  List,
-  ListItem,
   Stack,
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
-import { data } from "@/utils/data";
 import { BoxIcon } from "./icons/box";
 
-export const InfoCardList = () => {
+interface InfoCardListProps {
+  data: {
+    title: string;
+    subtitle: string;
+    cards: {
+      tabTitle: string;
+      tag: string;
+      title: string;
+      subtitle: string;
+      image: string;
+    }[];
+  };
+}
+
+export const InfoCardList = ({ data }: InfoCardListProps) => {
   const [isDesktop] = useMediaQuery("(min-width: 768px)");
   const [selectedSlider, setSelectedSlider] = useState(0);
 
@@ -24,11 +34,10 @@ export const InfoCardList = () => {
     <>
       <Stack spacing={3} textAlign={"center"} mb={5} maxW={"600px"} mx="auto">
         <Text fontSize={["30px", "40px"]} as={"h2"} fontWeight={"900"}>
-          Toma decisiones inteligentes_
+          {data.title}
         </Text>
         <Text fontSize={["18px"]} color="#707070">
-          Incorpora información en cada una de tus decisiones para optimizar el
-          proceso de ventas en e-commerce.
+          {data.subtitle}
         </Text>
       </Stack>
 
@@ -44,17 +53,9 @@ export const InfoCardList = () => {
             maxW={"container.lg"}
             mx="auto"
           >
-            {[0, 1, 2, 3, 4].map((position) => {
-              let titles = [
-                "Alíneate a las reglas del canal",
-                "Amplía tu oferta",
-                "Escoge las batallas que puedes ganar",
-                "Conoce el ranking de vendedores",
-                "Conquista la eficiencia",
-              ];
-
+            {data.cards.map((card, position) => {
               return (
-                <React.Fragment key={position}>
+                <React.Fragment key={card.tabTitle}>
                   <Button
                     width={"60px"}
                     minW="60px"
@@ -88,7 +89,7 @@ export const InfoCardList = () => {
                         width="190px"
                         whiteSpace={"pre-wrap"}
                       >
-                        {titles[position]}
+                        {card.tabTitle}
                       </Text>
                     )}
                   </Button>
@@ -107,9 +108,9 @@ export const InfoCardList = () => {
             <Flex alignItems={"center"} flex={"1"} m={0}></Flex>
           </HStack>
 
-          {data.home.infoCardList.map((item, index) => {
+          {data.cards.map((item, index) => {
             if (index !== selectedSlider) {
-              return <></>;
+              return <React.Fragment key={item.tag}></React.Fragment>;
             }
 
             return (
@@ -138,7 +139,7 @@ export const InfoCardList = () => {
         </>
       ) : (
         <Stack spacing={5}>
-          {data.home.infoCardList.map((item) => (
+          {data.cards.map((item) => (
             <Card key={item.tag} borderRadius="30px">
               <Stack textAlign={"center"} spacing={3}>
                 <Stack textAlign={"center"} spacing={3} p={5}>

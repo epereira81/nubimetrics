@@ -1,11 +1,31 @@
 import React from "react";
-import { Box, Button, Container, Flex, Img, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Img,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Select,
+} from "@chakra-ui/react";
 import { data } from "@/utils/data";
 import { useScroll } from "react-use";
 import { DrawerMenu } from "@/components/DrawerMenu";
 import { Logo } from "@/components/Logo";
+import { FaAngleDown } from "react-icons/fa";
 
-export const Header = () => {
+interface HeaderProps {
+  data: {
+    label: string;
+    link: string;
+  }[];
+}
+
+export const Header = ({ data }: HeaderProps) => {
   const scrollRef = React.useRef(null);
   const { x, y } = useScroll(scrollRef);
 
@@ -24,7 +44,7 @@ export const Header = () => {
           <Logo />
 
           <Flex alignItems="center" display={["none", "none", "flex"]}>
-            {data.menu.map((item) => (
+            {data.map((item) => (
               <Link href={item.link} key={item.label} mx="3">
                 {item.label}
               </Link>
@@ -49,7 +69,41 @@ export const Header = () => {
           </Flex>
 
           <Box display={{ md: "none" }}>
-            <DrawerMenu />
+            <DrawerMenu data={data} />
+          </Box>
+
+          <Box display={["none", "block"]}>
+            <Menu>
+              <MenuButton as={Button} rightIcon={<FaAngleDown />}>
+                Language
+              </MenuButton>
+              <MenuList>
+                <Link
+                  display={"block"}
+                  padding={2}
+                  _hover={{ bg: "#fafafa" }}
+                  href="/en"
+                >
+                  EN
+                </Link>
+                <Link
+                  display={"block"}
+                  padding={2}
+                  _hover={{ bg: "#fafafa" }}
+                  href="/"
+                >
+                  ES
+                </Link>
+                <Link
+                  display={"block"}
+                  padding={2}
+                  _hover={{ bg: "#fafafa" }}
+                  href="/br"
+                >
+                  PT-BR
+                </Link>
+              </MenuList>
+            </Menu>
           </Box>
         </Flex>
       </Container>

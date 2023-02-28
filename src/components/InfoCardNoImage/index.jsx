@@ -1,11 +1,18 @@
 import React from "react";
 import { Box, Link, Container, Stack, Text } from "@chakra-ui/react";
 
-export const InfoCardNoImage = ({ data }) => {
+export const InfoCardNoImage = ({ data, maxCtaWidth }) => {
+  const hasTwoCta = data.cta2 ?? false;
+
   return (
     <Box bg={"linear-gradient(#6A5FE5, #945DFD)"} py={10} my={16}>
       <Container maxW={"container.xl"} textAlign={"center"}>
-        <Text fontSize={"30px"} color={"#fff"} fontWeight={"600"} lineHeight={1}>
+        <Text
+          fontSize={"30px"}
+          color={"#fff"}
+          fontWeight={"600"}
+          lineHeight={1}
+        >
           {data.title}
         </Text>
 
@@ -32,7 +39,7 @@ export const InfoCardNoImage = ({ data }) => {
             border={"1px solid #fff"}
             color={"#fff"}
             py={3}
-            maxW="280px"
+            maxW={maxCtaWidth}
             width={"100%"}
             alignSelf={"center"}
             borderRadius={"7px"}
@@ -42,20 +49,24 @@ export const InfoCardNoImage = ({ data }) => {
           >
             {data.cta1.label}
           </Link>
-          <Link
-            border={"1px solid #fff"}
-            color={"#fff"}
-            py={3}
-            maxW="280px"
-            width={"100%"}
-            alignSelf={"center"}
-            borderRadius={"7px"}
-            fontSize={"20px"}
-            fontWeight={"600"}
-            href={data.cta2.link}
-          >
-            {data.cta2.label}
-          </Link>
+          {hasTwoCta ? (
+            <Link
+              border={"1px solid #fff"}
+              color={"#fff"}
+              py={3}
+              maxW={maxCtaWidth}
+              width={"100%"}
+              alignSelf={"center"}
+              borderRadius={"7px"}
+              fontSize={"20px"}
+              fontWeight={"600"}
+              href={data.cta2.link}
+            >
+              {data.cta2.label}
+            </Link>
+          ) : (
+            <></>
+          )}
         </Stack>
       </Container>
     </Box>

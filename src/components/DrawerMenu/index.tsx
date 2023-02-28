@@ -1,4 +1,3 @@
-import { data } from "@/utils/data";
 import {
   Flex,
   Icon,
@@ -11,11 +10,11 @@ import {
   Box,
   useDisclosure,
   Divider,
-  Container,
-  Link as CharkaLink,
+  Link as ChakraLink,
   MenuList,
   Menu,
   MenuButton,
+  MenuItem,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
@@ -28,6 +27,10 @@ interface DrawerMenuProps {
   data: {
     label: string;
     link: string;
+    submenu?: {
+      label: string;
+      link: string;
+    }[];
   }[];
 }
 
@@ -55,15 +58,15 @@ export const DrawerMenu = ({ data }: DrawerMenuProps) => {
               <Flex alignItems="center" display={["none", "none", "flex"]}>
                 {data.map((item) => (
                   <Link href={item.link} key={item.label}>
-                    <CharkaLink mx={3}>{item.label}</CharkaLink>
+                    <ChakraLink mx={3}>{item.label}</ChakraLink>
                   </Link>
                 ))}
               </Flex>
 
               <Flex alignItems="center" gap="7">
-                <CharkaLink color="brand.900" href="/login">
+                <ChakraLink color="brand.900" href="/login">
                   Login
-                </CharkaLink>
+                </ChakraLink>
 
                 <Box display={["none", "none", "flex"]}>
                   <Button
@@ -89,15 +92,42 @@ export const DrawerMenu = ({ data }: DrawerMenuProps) => {
             </Flex>
 
             <List spacing="3">
-              {data.map((item) => (
-                <ListItem key={item.label}>
-                  <Link href={item.link}>
-                    <CharkaLink fontSize={"21px"} color={"#232834"}>
-                      {item.label}
-                    </CharkaLink>
-                  </Link>
-                </ListItem>
-              ))}
+              {data.map((item) => {
+                if (item.submenu?.length) {
+                  return (
+                    <Menu isLazy key={item.label}>
+                      <MenuButton fontSize={"21px"} color={"#232834"}>
+                        {item.label}
+                      </MenuButton>
+
+                      <MenuList>
+                        {item.submenu.map((item) => (
+                          <MenuItem key={item.label}>
+                            <ChakraLink
+                              as={Link}
+                              href={item.link}
+                              key={item.label}
+                              mx="3"
+                            >
+                              {item.label}
+                            </ChakraLink>
+                          </MenuItem>
+                        ))}
+                      </MenuList>
+                    </Menu>
+                  );
+                }
+
+                return (
+                  <ListItem key={item.label}>
+                    <Link href={item.link}>
+                      <ChakraLink fontSize={"21px"} color={"#232834"}>
+                        {item.label}
+                      </ChakraLink>
+                    </Link>
+                  </ListItem>
+                );
+              })}
 
               <ListItem>
                 <Button
@@ -122,30 +152,30 @@ export const DrawerMenu = ({ data }: DrawerMenuProps) => {
                     Language
                   </MenuButton>
                   <MenuList>
-                    <CharkaLink
+                    <ChakraLink
                       display={"block"}
                       padding={2}
                       _hover={{ bg: "#fafafa" }}
                       href="/en"
                     >
                       EN
-                    </CharkaLink>
-                    <CharkaLink
+                    </ChakraLink>
+                    <ChakraLink
                       display={"block"}
                       padding={2}
                       _hover={{ bg: "#fafafa" }}
                       href="/"
                     >
                       ES
-                    </CharkaLink>
-                    <CharkaLink
+                    </ChakraLink>
+                    <ChakraLink
                       display={"block"}
                       padding={2}
                       _hover={{ bg: "#fafafa" }}
                       href="/br"
                     >
                       PT-BR
-                    </CharkaLink>
+                    </ChakraLink>
                   </MenuList>
                 </Menu>
               </Box>

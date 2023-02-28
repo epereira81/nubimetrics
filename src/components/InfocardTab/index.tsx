@@ -3,16 +3,19 @@ import React from "react";
 import { Desktop } from "./Desktop";
 import { Mobile } from "./Mobile";
 
-export interface InfocardTabProps {
+interface InfocardTabProps {
   data: {
-    tabtitle: string;
     title: string;
-    list: {
+    cards: {
+      tabtitle: string;
       title: string;
-      subtitle: string;
-      image: string;
+      list: {
+        title: string;
+        subtitle: string;
+        image: string;
+      }[];
     }[];
-  }[];
+  };
 }
 
 export const InfocardTab = ({ data }: InfocardTabProps) => {
@@ -28,14 +31,14 @@ export const InfocardTab = ({ data }: InfocardTabProps) => {
         maxW="700px"
         mx="auto"
       >
-        Incorpora información para potenciar tu negocio online_
+        {data.title}
       </Text>
 
       <Box display={["none", "block"]}>
-        <Desktop data={data} />
+        <Desktop data={data.cards} />
       </Box>
       <Box display={["block", "none"]}>
-        <Mobile data={data} />
+        <Mobile data={data.cards} />
       </Box>
     </Box>
   );

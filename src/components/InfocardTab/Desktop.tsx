@@ -12,7 +12,6 @@ import {
   Image,
   HStack,
 } from "@chakra-ui/react";
-import { InfocardTabProps } from ".";
 
 type InnerTabsProps = {
   tabtitle: string;
@@ -81,11 +80,11 @@ const InnerTabs = ({ list }: InnerTabsProps) => {
   );
 };
 
-export const Desktop = ({ data }: InfocardTabProps) => {
+export const Desktop = ({ data }: any) => {
   return (
     <Tabs align="center">
       <TabList borderColor="#8E2EED" borderBottomWidth="1px">
-        {data.map((item) => (
+        {data.map((item: any) => (
           <Tab
             key={item.tabtitle}
             fontSize={"20px"}
@@ -104,7 +103,7 @@ export const Desktop = ({ data }: InfocardTabProps) => {
       </TabList>
 
       <TabPanels>
-        {data.map((item) => (
+        {data.map((item: any) => (
           <TabPanel key={item.tabtitle}>
             <Text
               fontSize={"30px"}

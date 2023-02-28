@@ -12,12 +12,23 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { InfocardTabProps } from ".";
 
-export const Mobile = ({ data }: InfocardTabProps) => {
+type Cards = {
+  data: {
+    tabtitle: string;
+    title: string;
+    list: {
+      title: string;
+      subtitle: string;
+      image: string;
+    }[];
+  }[];
+};
+
+export const Mobile = ({ data }: Cards) => {
   return (
     <Stack>
-      <Accordion allowToggle  defaultIndex={[0]}>
+      <Accordion allowToggle defaultIndex={[0]}>
         {data.map((item) => (
           <AccordionItem key={item.title}>
             <AccordionButton>

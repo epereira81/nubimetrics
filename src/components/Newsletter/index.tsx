@@ -15,7 +15,7 @@ export const Newsletter = () => {
       <Text
         textAlign={["center", "left"]}
         fontWeight="bold"
-        color="brand.900"
+        color="brand.800"
         maxW={["", "340px"]}
       >
         Recibe contenido exclusivo y sigue todas las novedades del e-commerce.
@@ -31,8 +31,8 @@ export const Newsletter = () => {
         <Button
           type="submit"
           size="lg"
-          bg="brand.900"
-          _hover={{ bg: "brand.900" }}
+          bg="brand.800"
+          _hover={{ bg: "brand.800" }}
           color="#fff"
           w="100%"
           maxW={["", "200px"]}

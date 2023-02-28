@@ -4,24 +4,26 @@ import {
   Button,
   Container,
   Flex,
-  Img,
-  Link,
+  Link as ChakraLink,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
-  Select,
 } from "@chakra-ui/react";
-import { data } from "@/utils/data";
 import { useScroll } from "react-use";
 import { DrawerMenu } from "@/components/DrawerMenu";
 import { Logo } from "@/components/Logo";
 import { FaAngleDown } from "react-icons/fa";
+import Link from "next/link";
 
 interface HeaderProps {
   data: {
     label: string;
     link: string;
+    submenu?: {
+      label: string;
+      link: string;
+    }[];
   }[];
 }
 
@@ -44,17 +46,42 @@ export const Header = ({ data }: HeaderProps) => {
           <Logo />
 
           <Flex alignItems="center" display={["none", "none", "flex"]}>
-            {data.map((item) => (
-              <Link href={item.link} key={item.label} mx="3">
-                {item.label}
-              </Link>
-            ))}
+            {data.map((item) => {
+              if (item.submenu?.length) {
+                return (
+                  <Menu isLazy key={item.label}>
+                    <MenuButton mx="3">{item.label}</MenuButton>
+
+                    <MenuList>
+                      {item.submenu.map((item) => (
+                        <MenuItem key={item.label}>
+                          <ChakraLink
+                            as={Link}
+                            href={item.link}
+                            key={item.label}
+                            mx="3"
+                          >
+                            {item.label}
+                          </ChakraLink>
+                        </MenuItem>
+                      ))}
+                    </MenuList>
+                  </Menu>
+                );
+              }
+
+              return (
+                <ChakraLink as={Link} href={item.link} key={item.label} mx="3">
+                  {item.label}
+                </ChakraLink>
+              );
+            })}
           </Flex>
 
           <Flex alignItems="center" gap="7">
-            <Link color="brand.900" href="/login">
+            <ChakraLink as={Link} color="brand.900" href="/login">
               Login
-            </Link>
+            </ChakraLink>
 
             <Box display={["none", "none", "flex"]}>
               <Button
@@ -78,30 +105,33 @@ export const Header = ({ data }: HeaderProps) => {
                 Language
               </MenuButton>
               <MenuList>
-                <Link
+                <ChakraLink
+                  as={Link}
                   display={"block"}
                   padding={2}
                   _hover={{ bg: "#fafafa" }}
                   href="/en"
                 >
                   EN
-                </Link>
-                <Link
+                </ChakraLink>
+                <ChakraLink
+                  as={Link}
                   display={"block"}
                   padding={2}
                   _hover={{ bg: "#fafafa" }}
                   href="/"
                 >
                   ES
-                </Link>
-                <Link
+                </ChakraLink>
+                <ChakraLink
+                  as={Link}
                   display={"block"}
                   padding={2}
                   _hover={{ bg: "#fafafa" }}
                   href="/br"
                 >
                   PT-BR
-                </Link>
+                </ChakraLink>
               </MenuList>
             </Menu>
           </Box>

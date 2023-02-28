@@ -53,7 +53,7 @@ export default function Home() {
 
         <InfocardSlider data={home.infoCardSlider2} type={"2"} />
 
-        <InfoCardNoImage data={home.infoCardOptions} />
+        <InfoCardNoImage data={home.infoCardOptions} maxCtaWidth={"280px"} />
       </Layout>
     </Box>
   );

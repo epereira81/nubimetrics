@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/InfocardSlider/index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/InfocardSlider/index.jsx", "src/components/Infocard/index.jsx"],
   "exclude": ["node_modules"]
 }
